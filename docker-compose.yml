@@ -1,6 +1,7 @@
 services:
   flatmate-ml:
     image: dgclasher/flatmate-ml:latest
+    container_name: flatmate-ml
     pull_policy: always
     restart: unless-stopped
     ports:
