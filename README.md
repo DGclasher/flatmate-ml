@@ -23,7 +23,7 @@ Ensure you have Docker installed and running on your system.
 2. **Fetch required files**
    Download the sample user_profiles.csv dataset, docker-compose.yml, and .env.example files:
    ```
-   wget https://github.com/DGclasher/flatmate-ml/raw/main/datasets/user_profiles.csv -O datasets/ user_profiles.csv
+   wget https://github.com/DGclasher/flatmate-ml/raw/main/datasets/user_profiles.csv -O datasets/user_profiles.csv
    wget https://github.com/DGclasher/flatmate-ml/raw/main/docker-compose.yml
    wget https://github.com/DGclasher/flatmate-ml/raw/main/.env.example -O .env
    ```
