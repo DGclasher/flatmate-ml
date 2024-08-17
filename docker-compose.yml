@@ -1,0 +1,12 @@
+services:
+  flatmate-ml:
+    image: dgclasher/flatmate-ml:latest
+    pull_policy: always
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    env_file:
+      - .env
+    volumes:
+      - ./dumps:/app/dumps
+      - ./datasets:/app/datasets
