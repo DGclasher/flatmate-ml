@@ -1,6 +1,6 @@
-googleId,age,gender,occupation,educationLevel,preferredCity,budgetPriceRange,preferredAccommodation,numberOfRoommates,leaseDurationPreference,dailySchedule,smokingHabits,drinkingHabits,dietaryPreferences,petPreferences,introvertExtrovert,cleanlinessLevel,socialHabits,hobbiesAndInterests,languagePreferences,preferredSecurityMeasures,pastExperiencesWithRoommates
-86341,24,Female,Student,Graduate,New York,1000,Apartment,2,12,Early Bird,Non-smoker,Drinker,Vegetarian,Likes Pets,Extrovert,Neat,Party-friendly,Music,English,Secure Building,Good
-42343,27,Male,Professional,Postgraduate,San Francisco,1500,House,1,6,Night Owl,Smoker,Non-drinker,Non-vegetarian,Allergic to Pets,Introvert,Moderate,Quiet,Reading,Spanish,Gated Community,Bad
-35634,22,Male,Student,Undergraduate,Boston,800,Shared Room,3,12,Early Bird,Non-smoker,Drinker,Vegan,Has Pets,Extrovert,Neat,Party-friendly,Sports,English,Secure Building,Good
-56324,26,Female,Professional,Postgraduate,New York,1300,Apartment,1,6,Night Owl,Non-smoker,Drinker,Vegetarian,Likes Pets,Introvert,Moderate,Quiet,Music,Spanish,Gated Community,Bad
-53456,25,Female,Student,Graduate,Chicago,900,Shared Room,2,12,Early Bird,Non-smoker,Non-drinker,Non-vegetarian,Allergic to Pets,Extrovert,Neat,Party-friendly,Reading,English,Secure Building,Good
+googleId,age,gender,occupation,educationLevel,preferredCity,budgetPriceRange,preferredAccommodation,numberOfRoommates,leaseDurationPreference,dailySchedule,smokingHabits,drinkingHabits,dietaryPreferences,petPreferences,introvertExtrovert,socialHabits,hobbiesAndInterests,languagePreferences,preferredSecurityMeasures,isLookingFor
+86341,24,Female,Student,Graduate,New York,1000,Apartment,2,12,Early Bird,Non-smoker,Drinker,Vegetarian,Likes Pets,Extrovert,Party-friendly,Music,English,Secure Building,room
+42343,27,Male,Professional,Postgraduate,San Francisco,1500,House,1,6,Night Owl,Smoker,Non-drinker,Non-vegetarian,Allergic to Pets,Introvert,Quiet,Reading,Spanish,Gated Community,roommate
+35634,22,Male,Student,Undergraduate,Boston,800,Shared Room,3,12,Early Bird,Non-smoker,Drinker,Vegan,Has Pets,Extrovert,Party-friendly,Sports,English,Secure Building,roommate
+56324,26,Female,Professional,Postgraduate,New York,1300,Apartment,1,6,Night Owl,Non-smoker,Drinker,Vegetarian,Likes Pets,Introvert,Quiet,Music,Spanish,Gated Community,room
+53456,25,Female,Student,Graduate,Chicago,900,Shared Room,2,12,Early Bird,Non-smoker,Non-drinker,Non-vegetarian,Allergic to Pets,Extrovert,Party-friendly,Reading,English,Secure Building,room

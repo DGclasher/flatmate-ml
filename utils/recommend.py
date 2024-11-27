@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 from sklearn.metrics.pairwise import cosine_similarity
 
-
 def load_resources(root_dir):
     app_path = os.path.join(root_dir, 'datasets', 'user_profiles.csv')
     data = pd.read_csv(app_path)
@@ -24,17 +23,19 @@ def load_resources(root_dir):
 
     return data, encoder, scaler, X
 
-
 def recommend_profiles(user_data, data, encoder, scaler, X, num_recommendations=3):
     categorical_columns = [
         'gender', 'occupation', 'educationLevel', 'preferredCity',
         'preferredAccommodation', 'dailySchedule', 'smokingHabits',
         'drinkingHabits', 'dietaryPreferences', 'petPreferences',
-        'introvertExtrovert', 'cleanlinessLevel', 'socialHabits',
+        'introvertExtrovert', 'socialHabits',
         'hobbiesAndInterests', 'languagePreferences', 'preferredSecurityMeasures',
-        'pastExperiencesWithRoommates'
+        'isLookingFor'
     ]
     numerical_columns = ['age', 'budgetPriceRange', 'numberOfRoommates']
+
+    complementary_is_looking_for = 'roommate' if user_data['isLookingFor'] == 'room' else 'room'
+    valid_indices = data[data['isLookingFor'] == complementary_is_looking_for].index
 
     new_user_data = pd.DataFrame({
         'gender': [user_data['gender']],
@@ -48,12 +49,11 @@ def recommend_profiles(user_data, data, encoder, scaler, X, num_recommendations=
         'dietaryPreferences': [user_data['dietaryPreferences']],
         'petPreferences': [user_data['petPreferences']],
         'introvertExtrovert': [user_data['introvertExtrovert']],
-        'cleanlinessLevel': [user_data['cleanlinessLevel']],
         'socialHabits': [user_data['socialHabits']],
         'hobbiesAndInterests': [user_data['hobbiesAndInterests']],
         'languagePreferences': [user_data['languagePreferences']],
         'preferredSecurityMeasures': [user_data['preferredSecurityMeasures']],
-        'pastExperiencesWithRoommates': [user_data['pastExperiencesWithRoommates']],
+        'isLookingFor': [user_data['isLookingFor']],
         'age': [user_data['age']],
         'budgetPriceRange': [user_data['budgetPriceRange']],
         'numberOfRoommates': [user_data['numberOfRoommates']]
@@ -63,8 +63,9 @@ def recommend_profiles(user_data, data, encoder, scaler, X, num_recommendations=
     new_user_nums = scaler.transform(new_user_data[numerical_columns])
     new_user_X = np.hstack([new_user_cats, new_user_nums])
 
-    new_user_similarities = cosine_similarity(new_user_X, X).flatten()
-    similar_user_indices = np.argsort(new_user_similarities)[::-1][:num_recommendations]
+    valid_X = X[valid_indices]
+    new_user_similarities = cosine_similarity(new_user_X, valid_X).flatten()
+    similar_user_indices = valid_indices[np.argsort(new_user_similarities)[::-1][:num_recommendations]]
 
     user_ids = data.iloc[similar_user_indices]['googleId'].values.tolist()
     return user_ids

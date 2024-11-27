@@ -38,3 +38,5 @@ Ensure you have Docker installed and running on your system.
    ```
    docker compose down
    ```
+
+#### API Docs [here](https://documenter.getpostman.com/view/24270306/2sAYBViCEF)
